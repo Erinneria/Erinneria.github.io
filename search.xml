@@ -5,8 +5,8 @@
     <url>/2022/05/14/HelloWorld/</url>
     <content><![CDATA[<p>Happy birthday to 小屋</p>
 <span id="more"></span>]]></content>
-      <tags>
-        <tag>extra</tag>
-      </tags>
+      <categories>
+        <category>extra</category>
+      </categories>
   </entry>
 </search>
