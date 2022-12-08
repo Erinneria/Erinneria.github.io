@@ -8,12 +8,12 @@
         <meta name="author" content="Erinneria">
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link rel="icon" href="https://Erinneria.github.io/avator.png">
-        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
-        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        <link rel="icon" href="">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.1/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.1/js/all.min.js"></script>
         <link rel="stylesheet" href="/css/fonts.min.css">
         <link rel="stylesheet" href="/css/particlex.css">
-        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
 
         <!-- 网站置灰 -->
         
@@ -24,7 +24,7 @@
         
     <meta name="generator" content="Hexo 6.2.0"></head>
     <body>
-        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out">
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:2147483647;justify-content:space-between;background:#fff;transition:all 0.3s ease-out;-webkit-user-select:none;-moz-user-select:none;user-select:none">
             <div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center">
                 <div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center">
                     <div>
@@ -40,10 +40,9 @@
             <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
             <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
             <transition name="into">
-                <div v-show="show_page" style="display: -not-none">
-                    <div id="menu_show">
-                         
-<nav id="menu">
+                <div v-show="showpage" style="display: -not-none">
+                    <div id="menushow">
+                        <nav id="menu">
     <div class="desktop-menu">
         <a href="/">
             <span class="title">Erinneriaの小屋</span>
@@ -75,14 +74,14 @@
         </a>
         
     </div>
-    <div :class="'phone-menu ' + menu_show" id="phone-menu">
-        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
-        <div :class="'title'" @click="menu_show = !menu_show">
+    <div :class="'phone-menu ' + menushow" id="phone-menu">
+        <div class="curtain" @click="menushow = !menushow" v-show="menushow"></div>
+        <div class="title" @click="menushow = !menushow">
             <i class="fa-solid fa-bars fa-fw"></i>
             <span>&emsp;Erinneriaの小屋</span>
         </div>
         <transition name="slide">
-        <div class="items" v-show="menu_show">
+        <div class="items" v-show="menushow">
             
             <a href="/">
                 <div class="item">
@@ -135,10 +134,9 @@
 </nav>
                     </div>
                     <div id="main">
-                         
-<div class="categories-tags">
+                        <div id="archives">
     
-    <div class="all-s">
+    <div class="categories-tags">
         
         
         <span>
@@ -151,35 +149,32 @@
         </span>
         
     </div>
-    <div id="archives">
-        
-        <div class="timeline">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2022/5/14</div>
-                <a href="/2022/05/14/HelloWorld/">
-                    <h3>HelloWorld</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/extra">
-                            <span class="icon">
-                                <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
-                            </span>
-                            extra
-                        </a>
-                    </span>
-                    
-                    
-                </div>
+    
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2022/5/14</div>
+            <a href="/2022/05/14/HelloWorld/">
+                <h3>HelloWorld</h3>
+            </a>
+            <div class="info">
+                
+                <span class="category">
+                    <a href="/categories/extra/">
+                        <span class="icon">
+                            <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                        </span>
+                        extra
+                    </a>
+                </span>
+                
+                
             </div>
         </div>
-        
     </div>
+    
 </div>
-                         
-<footer id="footer">
+                        <footer id="footer">
     <div class="footer-wrap">
         <div>
             © 2022 - 2022 Erinneriaの小屋
@@ -190,7 +185,7 @@
         </div>
         <div></div>
         <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
-                target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle">Particle Theme</a></div>
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
         
     </div>
 </footer>
@@ -204,12 +199,6 @@
         <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
         <script src="/js/particlex.js"></script>
         <script src="/js/showimg.js"></script>
-        <script src="/js/showimg.js"></script>
-        <script src="/js/anime.min.js"></script>
-        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
-        <script src="/js/fireworks.js"></script>
-        <canvas id="background" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"></canvas>
-        <script src="/js/background.js"></script>
         
 
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/ots_n.model.json"},"display":{"position":"right","width":300,"height":600,"hOffset":50,"vOffset":-180},"mobile":{"show":false},"react":{"opacity":0.9},"log":false});</script></body>
